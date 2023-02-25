@@ -12,6 +12,29 @@ a{
     text-decoration: none;
 }
 
+a:hover{
+    background-color: rgb(220, 57, 136);
+}
+
+.btn{
+
+    border-color:  rgb(225, 51, 135);
+}
+
+.btn:hover {
+    border-color: black;
+    background-color: rgb(227, 81, 152);
+}
+
+.bi{
+    color:rgb(141, 9, 73);
+}
+
+.bi:hover{
+    color:black;
+}
+
+
 .bi-arrow-left{
     font-size: 2rem;
 }
