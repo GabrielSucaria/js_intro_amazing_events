@@ -85,8 +85,10 @@ i{
 
 .container{
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
+
 }
 
 .card-img-top{
