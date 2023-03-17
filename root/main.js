@@ -1,20 +1,18 @@
 const contenedorTarjetas = document.querySelector("#containerPastEvents");
 
+const events = data.events;
 
-function mostrarTarjetas(data){
 
-
-    const events = data.events;
-    const currentDate = data.currentDate;
+function mostrarTarjetas(array){
 
     let tarjetas = "";
 
     contenedorTarjetas.innerHTML = "";
 
+        if(array != 0){
 
-    for (const event of events) {
-
-            tarjetas +=`<div class="card" style="width: 18rem;">
+        array.forEach(event => {
+            tarjetas += `<div class="card" style="width: 18rem;">
             <img src="${event.image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${event.name}</h5>
@@ -23,12 +21,41 @@ function mostrarTarjetas(data){
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
             </div>`
+        })
+    
+        return tarjetas;
 
+    } else{
 
-
+        tarjetas = `<h3>No se encontro el evento</h3>`
+        return tarjetas
     }
-
-    return tarjetas;
+        
 }
 
-contenedorTarjetas.innerHTML = mostrarTarjetas(data);
+contenedorTarjetas.innerHTML = mostrarTarjetas(events);
+
+//--------------------------------------------------------------------------------
+
+let searchInput = document.getElementById("input");
+searchInput.addEventListener("keyup",filtrarTarjeta);
+
+function filtrarTarjeta(){
+
+    let tarjetafiltrada = [];
+
+    if(searchInput.value != ""){
+
+        tarjetafiltrada.push(...events.filter(event => event.name.toLowerCase()
+                            .includes(searchInput.value.toLowerCase())))
+
+        console.log(tarjetafiltrada)
+        contenedorTarjetas.innerHTML = mostrarTarjetas(tarjetafiltrada);  
+
+    }
+    else{
+        contenedorTarjetas.innerHTML = mostrarTarjetas(events);
+      }
+}
+
+
