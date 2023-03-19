@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+footer{
+    min-height: 20vh;
+    background-color: rgb(227, 81, 152);
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+
+header{
+    min-height: 25vh;
+}
+
+main{
+    min-height: 65vh;
+}
+
 a{
 
     background-color: rgb(227, 119, 172);
@@ -28,6 +44,24 @@ a:hover{
 
 .bi{
     color:rgb(141, 9, 73);
+}
+
+
+
+
+.iRedesSociales{
+    font-size:xx-large;
+    padding-bottom: 1rem;
+}
+
+
+
+.ulRedesSociales{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:15%
 }
 
 .bi:hover{
