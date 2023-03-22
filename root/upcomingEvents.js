@@ -35,7 +35,7 @@ function mostrarTarjetas(array){
     
     else{
 
-        tarjetas = `<h3>No se encontro el evento</h3>`
+        tarjetas = `<h3>Event not found</h3>`
         return tarjetas
     }
 

@@ -51,7 +51,7 @@ const data = {
       },
       {
         _id: 5,
-        "image":"./assets/images/Marathon.jpg",
+        "image":"https://necochea.gov.ar/wp-content/uploads/2020/12/6197706_orig.jpg",
         "name":"Comicon",
         "date":"2021-02-12",
         "description":"For comic lovers, all your favourite characters gathered in one place.",
