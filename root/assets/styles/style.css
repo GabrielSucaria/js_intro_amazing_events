@@ -101,14 +101,14 @@ body{
     background-color:rgb(246, 178, 215);
 }
 
-.container-fluid{
+ .container-fluid{
     display: flex;
     justify-content:space-between;
     align-items: center;
     background-color: rgb(239, 150, 199);
-    height: 12vh;
+    min-height: 12vh;
     border: 0.01rem solid black;
-}
+} 
 
 .navbar{
     margin: 0%;
