@@ -135,3 +135,33 @@ i{
 .card-img-top{
     height: 100%;
 }
+
+.container-border{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-bordered{
+    width: 70%;
+    margin-bottom: 3rem;
+}
+
+.logo {
+    display: flex;
+    background-image: url(../images/Logo_Amazing_Events.png);
+    background-size:cover;
+    height:5rem;
+    width: 22rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between
+
+}
+
+

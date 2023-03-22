@@ -1,11 +1,27 @@
 
 const contenedorTarjetas = document.querySelector("#containerPastEvents");
 
-const events = data.events;
-const currentDate = data.currentDate;
+let events = "";
+let currentDate = "";
+
+function traerDatos(){
+    fetch('https://mindhub-xj03.onrender.com/api/amazing' || './data.json')
+    .then(response => response.json())
+    .then(datosApi =>{
+        console.log(datosApi)
+        events = datosApi.events;
+        currentDate = datosApi.currentDate;
+        console.log(events)
+        console.log(currentDate)
+        contenedorTarjetas.innerHTML = mostrarTarjetas(events,currentDate);
+    })
+    .catch(error => console.log(error.message))
+}
+
+traerDatos()
 
 
-function mostrarTarjetas(array){
+function mostrarTarjetas(array,fecha){
 
     let tarjetas = "";
 
@@ -15,7 +31,7 @@ function mostrarTarjetas(array){
 
         array.forEach(event => {
 
-            if(event.date > currentDate){
+            if(event.date > fecha){
 
                 tarjetas += `<div class="card" style="width: 18rem;">
                 <img src="${event.image}" class="card-img-top" alt="...">
@@ -41,9 +57,9 @@ function mostrarTarjetas(array){
 
 }
 
-contenedorTarjetas.innerHTML = mostrarTarjetas(events);
+//contenedorTarjetas.innerHTML = mostrarTarjetas(events);
 
-//-----------------------------------------------------------------------
+// Funcion de busqueda mediante input
 
 
 let searchInput = document.getElementById("input");
@@ -63,6 +79,6 @@ function filtrarTarjeta(){
 
     }
     else{
-        contenedorTarjetas.innerHTML = mostrarTarjetas(events);
+        contenedorTarjetas.innerHTML = mostrarTarjetas(events,currentDate);
       }
 }

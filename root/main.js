@@ -1,6 +1,20 @@
 const contenedorTarjetas = document.querySelector("#containerPastEvents");
 
-const events = data.events;
+
+function traerDatos(){
+    fetch('https://mindhub-xj03.onrender.com/api/amazing' || './data.json')
+    .then(response => response.json())
+    .then(datosApi =>{
+        console.log(datosApi)
+        events = datosApi.events
+        console.log(events)
+        contenedorTarjetas.innerHTML = mostrarTarjetas(events);
+    })
+    .catch(error => console.log(error.message))
+}
+
+traerDatos()
+
 
 
 function mostrarTarjetas(array){
@@ -33,9 +47,8 @@ function mostrarTarjetas(array){
         
 }
 
-contenedorTarjetas.innerHTML = mostrarTarjetas(events);
 
-//--------------------------------------------------------------------------------
+// Funcion de busqueda mediante input
 
 let searchInput = document.getElementById("input");
 searchInput.addEventListener("keyup",filtrarTarjeta);
