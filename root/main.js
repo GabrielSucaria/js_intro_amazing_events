@@ -60,7 +60,7 @@ function filtrarTarjeta(){
     if(searchInput.value != ""){
 
         tarjetafiltrada.push(...events.filter(event => event.name.toLowerCase()
-                            .includes(searchInput.value.toLowerCase())))
+                            .includes(searchInput.value.trim().toLowerCase())))
 
         console.log(tarjetafiltrada)
         contenedorTarjetas.innerHTML = mostrarTarjetas(tarjetafiltrada);  
