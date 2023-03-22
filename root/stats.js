@@ -1,4 +1,4 @@
-fetch('https://mindhub-xj03.onrender.com/api/amazing' || './data.json')
+fetch('https://mindhub-xj03.onrender.com/api/amazing' || './amazing_1.json')
   .then(res => res.json())
   .then(data => {
     arrayPast = past(data.events, data.currentDate)

@@ -5,7 +5,7 @@ let events = "";
 let currentDate = "";
 
 function traerDatos(){
-    fetch('https://mindhub-xj03.onrender.com/api/amazing' || './data.json')
+    fetch('https://mindhub-xj03.onrender.com/api/amazing' || './amazing_1.json')
     .then(response => response.json())
     .then(datosApi =>{
         console.log(datosApi)
